@@ -18,5 +18,3 @@ def is_isogram(string: str) -> bool:
             return False
     
     return True
-
-print(is_isogram("moOse"))
