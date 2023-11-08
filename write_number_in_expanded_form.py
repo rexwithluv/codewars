@@ -8,7 +8,6 @@ NOTE: All numbers will be whole numbers greater than 0.
 
 If you liked this kata, check out part 2!! """
 
-
 def expanded_form(num: int) -> str:
     lst = []
     
@@ -23,16 +22,4 @@ def expanded_form(num: int) -> str:
         if i[0] != "0":
             clean_lst.append(i)
     
-    return " + ".join(clean_lst)   
-
-print(expanded_form(70304))
-
-
-""" def expanded_form(num: int) -> str:
-    chain = ""
-    
-    for position, i in enumerate(str(num)):
-        if i != 0:
-            chain += i + ("0" * (position + 1)) + " + "
-        
-    return chain """
+    return " + ".join(clean_lst)
