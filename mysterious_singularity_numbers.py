@@ -30,6 +30,3 @@ From Singularity Hub Community """
 def real_numbers(n: int) -> int:
     count = n // 2 + n // 3 + n // 5 - n // 6 - n // 10 - n // 15 + n // 30
     return n - count
-
-
-print(real_numbers(9016147))
