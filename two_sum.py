@@ -23,6 +23,3 @@ def two_sum(numbers: List[int], target: int) -> List[int]:
         for j in numbers[numbers.index(i) + 1:]:
             if i + j == target:
                 return numbers.index(i), numbers[numbers.index(i) + 1:].index(j) + len(numbers[:numbers.index(i) + 1])
-            
-
-print(two_sum([2, 2, 3], 4))
