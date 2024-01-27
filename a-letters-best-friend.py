@@ -28,10 +28,15 @@ before another given letter.
 
 def best_friend(txt, a, b):
     try:
-        for i in range(len(txt)):
-            if txt[i] == a and txt[i + 1] != b:
+        indexs = [p for p, i in enumerate(txt) if i == a]
+        for i in indexs:
+            if txt[i + 1] != b:
                 return False
 
         return True
+
     except IndexError:
         return False
+
+
+best_friend("he hounded to the store", "h", "e")
