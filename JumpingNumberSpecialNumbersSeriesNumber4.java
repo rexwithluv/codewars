@@ -1,0 +1,134 @@
+/* ID: 5a54e796b3bfa8932c0000ed
+
+# Definition
+
+**_Jumping number_** is the number that *All adjacent digits in it differ by 1*.
+
+____
+
+# Task
+
+**_Given_** a number, **_Find if it is Jumping or not_** . 
+____
+
+# Warm-up (Highly recommended)
+
+# [Playing With Numbers Series]
+(https://www.codewars.com/collections/playing-with-numbers)
+___
+
+# Notes 
+
+* **_Number_** *passed is always*  **_Positive_** .
+
+* **_Return_** *the result as* **_String_** . 
+
+* **_The difference between_** *‘9’ and ‘0’* is **_not considered as 1_** . 
+
+* **_All single digit numbers_** are considered as **_Jumping numbers_**. 
+___
+
+# Input >> Output Examples
+
+```
+jumpingNumber(9) ==> return "Jumping!!"
+```
+## **_Explanation_**:
+
+* It's  **_single-digit number_** 
+___
+
+```
+jumpingNumber(79) ==> return "Not!!"
+```
+
+## **_Explanation_**:
+
+* *Adjacent digits* **_don't differ by 1_**
+___
+
+```
+jumpingNumber(23) ==> return "Jumping!!"
+```
+
+## **_Explanation_**:
+
+* *Adjacent digits* **_differ by 1_**
+___
+
+```
+jumpingNumber(556847) ==> return "Not!!"
+```
+
+## **_Explanation_**:
+
+* *Adjacent digits* **_don't differ by 1_**
+___
+
+```
+jumpingNumber(4343456) ==> return "Jumping!!"
+```
+
+## **_Explanation_**:
+
+* *Adjacent digits* **_differ by 1_**
+___
+
+```
+jumpingNumber(89098) ==> return "Not!!"
+```
+
+## **_Explanation_**:
+
+* *Adjacent digits* **_don't differ by 1_**
+___
+
+```
+jumpingNumber(32) ==> return "Jumping!!"
+```
+
+## **_Explanation_**:
+
+* *Adjacent digits* **_differ by 1_**
+___
+___
+___
+
+# [Playing with Numbers Series]
+(https://www.codewars.com/collections/playing-with-numbers)
+
+# [Playing With Lists/Arrays Series]
+(https://www.codewars.com/collections/playing-with-lists-slash-arrays)
+
+# [For More Enjoyable Katas]
+(http://www.codewars.com/users/MrZizoScream/authored)
+___
+
+## ALL translations are welcomed
+
+## Enjoy Learning !!
+# Zizou */
+package kata;
+
+public class JumpingNumberSpecialNumbersSeriesNumber4 {
+
+    public static String jumpingNumber(int number) {
+        String numberString = String.valueOf(number);
+
+        boolean jumping = true;
+        int i;
+        for (i = 0; i < numberString.length() - 1 && jumping; i++) {
+
+            if (numberString.charAt(i) != numberString.charAt(i + 1) - 1 && numberString.charAt(i) != numberString.charAt(i + 1) + 1) {
+                jumping = false;
+            }
+
+        }
+
+        if (jumping) {
+            return "Jumping!!";
+        }
+        return "Not!!";
+    }
+
+}
