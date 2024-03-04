@@ -1,4 +1,6 @@
-/* Given a string s, write a method (function) that will return true if its a valid single integer or floating number or false if its not.
+/* ID: 57126304cdbf63c6770012bd
+
+Given a string s, write a method (function) that will return true if its a valid single integer or floating number or false if its not.
 
 Valid examples, should return true:
 

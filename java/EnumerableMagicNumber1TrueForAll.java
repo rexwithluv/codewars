@@ -1,6 +1,8 @@
-""" ## Task
-Create a method **all** which takes two params: 
-* a sequence 
+/* ID: 54598d1fcbae2ae05200112c
+
+## Task
+Create a method **all** which takes two params:
+* a sequence
 * a function (function pointer in C)
 
 and returns **true** if the function in the params returns true for every element in the sequence. Otherwise, it should
@@ -15,11 +17,12 @@ all((1, 2, 3, 4, 5), less_than_9)    -> True
 ## Help
 Here's a (Ruby) resource if you get stuck:
 
-http://www.rubycuts.com/enum-all """
+http://www.rubycuts.com/enum-all */
+package kata;
 
 import java.util.function.IntPredicate;
 
-public class Solution {
+public class EnumerableMagicNumber1TrueForAll {
     public static boolean all(int[] list, IntPredicate predicate) {
         for (int i : list) {
             if (!predicate.test(i)) {
