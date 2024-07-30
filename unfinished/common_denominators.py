@@ -46,7 +46,7 @@ output is then          `"6 12 4 12 3 12"`"""
 
 # Esta función recibirá los denominadores y devolverá el MCM
 def find_common_denominator(lst: list) -> int:
-    mcm = 
+    pass
 
 
 def convert_fracts(lst: list) -> list[list[int]]:
