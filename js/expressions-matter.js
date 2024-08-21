@@ -26,10 +26,11 @@ The maximum value that can be obtained is 9.
 3. `expressionsMatter(9, 1, 1) ==> 18`, because `9 * (1 + 1) = 18`. */
 
 function expressionMatter(a, b, c) {
-    let results = [];
-    results.push((a + b) * c);
-    results.push(a*b*c);
-    results.push()
-}
+  let results = [];
+  results.push((a + b) * c);
+  results.push(a * b * c);
+  results.push(a + b + c);
+  results.push(a * (b + c));
 
-console.log(expressionMatter(1, 5, 2))
+  return Math.max(...results);
+}

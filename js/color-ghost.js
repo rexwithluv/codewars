@@ -33,6 +33,6 @@ ghost.GetColor(); // => "white" or "yellow" or "purple" or "red"
 ``` */
 
 var Ghost = function () {
-    let colors = ["white", "yellow", "purple", "red"];
-    return colorGhost = colors[Math.floor(Math.random() * colors.length)]
+  let colors = ["white", "yellow", "purple", "red"];
+  this.color = colors[Math.floor(Math.random() * colors.length)];
 };
