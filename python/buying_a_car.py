@@ -1,4 +1,4 @@
-""" ID: 554a44516729e4d80b000012
+"""ID: 554a44516729e4d80b000012
 
 Let us begin with an example:
 
@@ -53,11 +53,24 @@ nbMonths(12000, 8000, 1000, 1.5) should return [0, 4000]
 nbMonths(8000, 8000, 1000, 1.5) should return [0, 0]
 ```
 
-We don't take care of a deposit of savings in a bank:-) """
+We don't take care of a deposit of savings in a bank:-)"""
 
 
-def nb_months(
+def nbMonths(
     start_price_old, start_price_new, saving_per_month, percent_loss_by_month
-):
-    # your code
-    return []
+) -> list[int]:
+    months = 0
+    savings = 0.0
+
+    while (start_price_old + savings) < start_price_new:
+        months += 1
+
+        if months % 2 == 0:
+            percent_loss_by_month += 0.5
+
+        start_price_old *= 1 - percent_loss_by_month / 100
+        start_price_new *= 1 - percent_loss_by_month / 100
+        savings += saving_per_month
+
+    remaining_money = round((start_price_old + savings) - start_price_new)
+    return [months, remaining_money]
