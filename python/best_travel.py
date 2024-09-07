@@ -39,6 +39,12 @@ or otherwise nil, null, None, Nothing, depending on the language. In that case w
 - in some languages this "list" is in fact a *string* (see the Sample
 Tests)."""
 
+from itertools import combinations
 
-def choose_best_sum(t, k, ls):
-    pass
+def choose_best_sum(t, k, ls) -> int:
+    best_sum = -1
+    for i in combinations(ls, k):
+        current = sum(i)
+        if current <= t and current > best_sum:
+            best_sum = current
+    return best_sum if best_sum != -1 else None
