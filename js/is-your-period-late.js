@@ -17,7 +17,7 @@ cycleLength. Otherwise, return false. */
 function periodIsLate(last, today, cycleLength) {
     last = new Date(last);
     today = new Date(today);
-    if ((today.getTime() - last.getTime()) / (1000 * 3600 * 24) < cycleLength) {
+    if ((today.getTime() - last.getTime()) / (1000 * 3600 * 24) <= cycleLength) {
         return false;
     }
     return true;

@@ -1,4 +1,4 @@
-""" ID: 564057bc348c7200bd0000ff
+"""ID: 564057bc348c7200bd0000ff
 
 From Wikipedia:
 
@@ -57,7 +57,19 @@ Call `thirt` the function which processes this sequence of operations on an inte
 
 `thirt(1234567)` calculates 178, then 87, then 87 and returns `87`.
 
-`thirt(321)` calculates 48, 48 and returns `48` """
+`thirt(321)` calculates 48, 48 and returns `48`"""
+
+
 
 def thirt(n: int) -> int:
-    pass
+    seq = (1, 10, 9, 12, 3, 4)
+    n = [int(i) for i in str(n)]
+    new_result = sum(i * s for i, s in zip(n, seq))
+    old_result = None
+    while old_result != new_result:
+        old_result = new_result
+        new_result = sum(i * s for i, s in zip([int(i) for i in str(old_result)], seq))
+    return new_result
+
+
+print(thirt(546))
