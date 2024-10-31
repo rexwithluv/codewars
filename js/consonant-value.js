@@ -31,7 +31,13 @@ lexicon](https://www.codewars.com/kata/59cf8bed1a68b75ffb000026) */
 function solve(s) {
     const regex = /[^aieou]+/gi;
     const found = s.match(regex);
-    console.log(found);
+
+    const asciiLowercase = 'abcdefghijklmnopqrstuvwxyz';
+    return Math.max(...found.map((group) => {
+        return Array.from(group).reduce((acc, letter) => {
+            return asciiLowercase.indexOf(letter) + 1 + acc
+        }, 0);
+    }));
 };
 
-solve("zodiacs");
+console.log(solve("strength"));
