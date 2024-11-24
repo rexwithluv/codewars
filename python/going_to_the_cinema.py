@@ -34,7 +34,19 @@ movie(100, 10, 0.95) should return 24
     (with card the total price is 235, with tickets 240)
 ```"""
 
+import math
 
-def movie(card, ticket, perc):
-    # your code
-    pass
+
+def movie(card: int, ticket: int, perc: float) -> int:
+    visits: int = 0
+    price_a: float = 0
+    price_b: float = card
+    actual_price = ticket * perc
+
+    while not math.ceil(price_b) < price_a:
+        visits += 1
+        price_a += ticket
+        price_b += actual_price
+        actual_price *= perc
+
+    return visits
