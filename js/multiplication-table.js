@@ -22,17 +22,18 @@ For the given example, the return value should be:
 Note: in C, you must return an allocated table of allocated rows
 ``` */
 
+"use strict";
+
 const multiplicationTable = (size) => {
-    let table = []
+    let table = [];
     for (let i = 1; i <= size; i++) {
-        let row = []
+
+        let actualRow = [];
         for (let j = 0; j < size; j++) {
-            row.push(i +j);
+            actualRow.push(i + (j * i));
         }
-        table.push(row);
+        table.push(actualRow);
     }
 
     return table;
-}
-
-console.log(multiplicationTable(3));
+};
