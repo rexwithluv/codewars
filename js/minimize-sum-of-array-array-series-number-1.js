@@ -63,4 +63,12 @@ ___
 ## Enjoy Learning !!
 # Zizou */
 
-const minSum = (arr) =>
+"use strict";
+
+function minSum(arr) {
+    return arr.sort((a, b) => b - a)
+        .slice(0, arr.length / 2)
+        .reduce((acc, curr, i) => {
+            return acc + curr * arr[arr.length - i - 1];
+        }, 0);
+}
