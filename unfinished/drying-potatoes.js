@@ -27,6 +27,8 @@ Write function `potatoes` with
 #### Example:
 `potatoes(99, 100, 98) --> 50` */
 
-const potatoes = (p0, w0, p1) => {
+"use strict";
 
+function potatoes(p0, w0, p1) {
+    return Math.floor((w0 * (1 - (p0 / 100))) / (1 - (p1 / 100)));
 }

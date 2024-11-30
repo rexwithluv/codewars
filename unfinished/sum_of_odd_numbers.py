@@ -20,5 +20,4 @@ Calculate the sum of the numbers in the n<sup>th</sup> row of this triangle (sta
 
 
 def row_sum_odd_numbers(n: int) -> int:
-    
-    return sum((n - 1) * 3)
+    start: int = None
