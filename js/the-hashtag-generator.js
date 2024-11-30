@@ -19,13 +19,15 @@ Here's the deal:
 ""                                        =>  false
 ``` */
 
+"use strict";
+
+
 function generateHashtag(str) {
-  if (str.split(" ")[0] == "" || str.replaceAll(" ", "").length >= 140) {
-    return false;
-  } else {
-    const capitalize = (string) => string[0].toUpperCase() + string.slice(1);
-    return "#" + str.replace(/\s+/g, " ").split(" ").map(capitalize).join("");
-  }
+    if (str.trim().length === 0) return false;
+
+    const capitalize = (string) => string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+    let result = "#" + str.split(" ").map(word => capitalize(word)).join("");
+
+    return result.length > 140 ? false : result;
 }
 
-console.log(generateHashtag("code" + " ".repeat(140) + "wars"));
