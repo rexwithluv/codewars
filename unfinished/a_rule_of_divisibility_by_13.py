@@ -60,16 +60,8 @@ Call `thirt` the function which processes this sequence of operations on an inte
 `thirt(321)` calculates 48, 48 and returns `48`"""
 
 
-
-def thirt(n: int) -> int:
-    seq = (1, 10, 9, 12, 3, 4)
-    n = [int(i) for i in str(n)]
-    new_result = sum(i * s for i, s in zip(n, seq))
-    old_result = None
-    while old_result != new_result:
-        old_result = new_result
-        new_result = sum(i * s for i, s in zip([int(i) for i in str(old_result)], seq))
-    return new_result
+def thirt(n):
+    pass
 
 
-print(thirt(546))
+

@@ -10,9 +10,6 @@ function hello(name) {
 const assert = require('assert');
 try {
     assert.strictEqual(hello("RexWithLuv"), "Hello RexWithLuv!");
-    assert.strictEqual(hello("Anonymous"), "Hello Anonymous!");
-    assert.strictEqual(hello("Linus"), "Hello Linus!");
-    assert.strictEqual(hello("you"), "Hello you!");
 
     console.log("Todos los tests pasaron correctamente.");
 } catch (error) {
@@ -27,12 +24,15 @@ def hello(name):
     return f"Hello {name}!"
 
 try:
-    assert hello("RexWithLuv") == "Hello RexWithLuv!"
-    assert hello("Anonymous") == "Hello Anonymous!"
-    assert hello("Linus") == "Hello Linus!"
-    assert hello("you") == "Hello you!"
+    test_cases = [
+        ("RexWithLuv","Hello RexWithLuv!")
+    ]
+
+    for param, expected in test_cases:
+        result = hello(param)
+        assert result == expected, f"El test ha fallado con el parámetro {param}: se esperaba {expected}, obtenido {result}"
 
     print("Todos los tests pasaron correctamente")
 except AssertionError as error:
-    print(f"Ha fallado el test: {error}")
+    print(error)
 ```

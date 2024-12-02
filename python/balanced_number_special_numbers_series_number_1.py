@@ -72,7 +72,13 @@ Series](https://www.codewars.com/collections/playing-with-lists-slash-arrays)
 """
 
 
-def balanced_num(number):
-    len_num = len(str(number))
-    if len_num % 2 == 1:
-        center = str(number)
+def balanced_num(number: int) -> str:
+    number = str(number)
+    if len(number) < 3:
+        return "Balanced"
+
+    mid = len(number) // 2
+    fst_part = sum(int(i) for i in number[: mid - (1 if len(number) % 2 == 0 else 0)])
+    sec_part = sum(int(i) for i in number[mid + 1 :])
+
+    return "Balanced" if fst_part == sec_part else "Not Balanced"
